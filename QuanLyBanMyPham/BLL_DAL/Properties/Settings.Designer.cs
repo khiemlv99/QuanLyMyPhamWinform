@@ -26,7 +26,7 @@ namespace BLL_DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KEVKUCD\\SQLEXPRESS;Initial Catalog=QuanLyShopMyPham;Integrate" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-ud3h7t0\\sqlexpress;Initial Catalog=QuanLyShopMyPham;Integrate" +
             "d Security=True")]
         public string QuanLyShopMyPhamConnectionString {
             get {

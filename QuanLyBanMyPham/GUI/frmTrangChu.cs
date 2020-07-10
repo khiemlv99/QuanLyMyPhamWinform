@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL_DAL;
 namespace GUI
 {
     public partial class frmTrangChu : Form
     {
+        CapNhatTaiKhoan_BLL_DAL tk = new CapNhatTaiKhoan_BLL_DAL();
         public frmTrangChu()
         {
             InitializeComponent();
+            tk.loadDuLieuTaiKhoanHienTai("QL004");
             hideSubMenu();
+           
         }
 
         private void hideSubMenu()
@@ -44,20 +47,20 @@ namespace GUI
         #region MediaSubMenu
         private void button2_Click(object sender, EventArgs e)
         {
-          
-         
+           
+            openChildForm(new frmThongTinTaiKhoan());      
             hideSubMenu();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-       
+            openChildForm(new frmThemTaiKhoan());
             hideSubMenu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-          
+            openChildForm(new frmCapNhatTaiKhoan());
             hideSubMenu();
         }
 
