@@ -47,8 +47,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelSideMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
             this.panelMediaSubMenu.SuspendLayout();
@@ -331,7 +331,7 @@
             this.label4.ForeColor = System.Drawing.Color.Snow;
             this.label4.Location = new System.Drawing.Point(98, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 29);
+            this.label4.Size = new System.Drawing.Size(111, 24);
             this.label4.TabIndex = 1;
             this.label4.Text = "MỸ PHẨM ";
             // 
@@ -369,7 +369,7 @@
             // 
             // frmTrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1198, 722);
@@ -382,6 +382,7 @@
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "frmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelSideMenu.ResumeLayout(false);
             this.panelPlaylistSubMenu.ResumeLayout(false);
             this.panelMediaSubMenu.ResumeLayout(false);

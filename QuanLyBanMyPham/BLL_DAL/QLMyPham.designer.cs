@@ -2190,6 +2190,16 @@ namespace BLL_DAL
 			this._NhomSP = default(EntityRef<NhomSP>);
 			OnCreated();
 		}
+
+        public SanPham(int p1, string p2, string p3, int a, int p4)
+        {
+            // TODO: Complete member initialization
+            this.p1 = p1;
+            this.p2 = p2;
+            this.p3 = p3;
+            this.a = a;
+            this.p4 = p4;
+        }
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSP", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int MaSP
@@ -2411,6 +2421,11 @@ namespace BLL_DAL
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
+        private int p1;
+        private string p2;
+        private string p3;
+        private int a;
+        private int p4;
 		
 		protected virtual void SendPropertyChanging()
 		{
