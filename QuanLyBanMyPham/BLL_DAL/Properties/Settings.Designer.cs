@@ -28,9 +28,9 @@ namespace BLL_DAL.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KEVKUCD\\SQLEXPRESS;Initial Catalog=QuanLyShopMyPham;Integrate" +
             "d Security=True")]
-        public string QuanLyShopMyPhamConnectionString {
+        public string QuanLyShopMyPhamConnectionString1 {
             get {
-                return ((string)(this["QuanLyShopMyPhamConnectionString"]));
+                return ((string)(this["QuanLyShopMyPhamConnectionString1"]));
             }
         }
     }

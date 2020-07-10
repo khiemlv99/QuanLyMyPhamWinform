@@ -33,6 +33,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DanhMuc_BLL.cs" />
+    <Compile Include="GioHang_BLL_DAL.cs" />
+    <Compile Include="CapNhatTaiKhoan_BLL_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -53,6 +57,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLMyPham.dbml</DependentUpon>
     </Compile>
+    
+    <Compile Include="TaiKhoanHienTai.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -62,8 +68,8 @@
     </None>
     <None Include="QLMyPham.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>QLMyPham.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>QLMyPham1.designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
