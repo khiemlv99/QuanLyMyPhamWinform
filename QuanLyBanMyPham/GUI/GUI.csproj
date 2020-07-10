@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmThietLapGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThietLapGia.Designer.cs">
+      <DependentUpon>frmThietLapGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmThietLapGia.resx">
+      <DependentUpon>frmThietLapGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>

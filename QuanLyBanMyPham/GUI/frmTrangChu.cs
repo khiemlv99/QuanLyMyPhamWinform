@@ -76,12 +76,13 @@ namespace GUI
         #region PlayListManagemetSubMenu
         private void button8_Click(object sender, EventArgs e)
         {
+            openChildForm(new frmDanhMuc());
             hideSubMenu();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-          
+            openChildForm(new frmThietLapGia());
             hideSubMenu();
         }
 
@@ -150,7 +151,7 @@ namespace GUI
         }
 
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null) activeForm.Close();
             activeForm = childForm;
@@ -162,5 +163,7 @@ namespace GUI
             childForm.BringToFront();
             childForm.Show();
         }
+
+
     }
 }
