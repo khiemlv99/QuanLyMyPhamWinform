@@ -94,7 +94,9 @@ namespace GUI
             txtTongTienHang.Text = tongtien+"";
             txtKhachCanTra.Text = (tongtien - (int.Parse(txtGiamGia.Text)))+"";
             DateTime time = DateTime.Now;
-            GioHang.TaoHoaDon("NV001", time, 1, tongtien);
+            String nv = TaiKhoanHienTai.TaiKhoan1;
+            int maKhachHang = 1;
+            GioHang.TaoHoaDon(nv, time, maKhachHang, tongtien);
         }
 
 
