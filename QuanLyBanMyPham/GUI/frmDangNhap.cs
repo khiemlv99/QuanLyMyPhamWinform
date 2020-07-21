@@ -14,7 +14,7 @@ namespace GUI
     public partial class frmDangNhap : Form
     {
         TaiKhoan_BLL tk = new TaiKhoan_BLL();
-
+        CapNhatTaiKhoan_BLL_DAL tk1 = new CapNhatTaiKhoan_BLL_DAL();
         public frmDangNhap()
         {
             InitializeComponent();
@@ -66,9 +66,12 @@ namespace GUI
             {
                 if (tk.kiemtrataikhoan(txtTaiKhoan.Text, txtMatKhau.Text))
                 {
+                    tk1.loadDuLieuTaiKhoanHienTai(txtTaiKhoan.Text);
                     this.Hide();
                     frmTrangChu a = new frmTrangChu();
                     a.Show();
+                  
+
                 }
             }
             catch

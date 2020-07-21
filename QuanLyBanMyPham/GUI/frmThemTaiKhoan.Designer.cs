@@ -81,6 +81,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
@@ -167,6 +168,7 @@
             this.btnLuu.TabIndex = 31;
             this.btnLuu.Text = "Lưu ";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
             // lbNhapLaiMatKhau
             // 

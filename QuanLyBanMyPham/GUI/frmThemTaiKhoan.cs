@@ -48,12 +48,7 @@ namespace GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (taikhoan.kiemTrakhoachinh(txtTaiKhoan.Text.Trim()))
-            {
-                taikhoan.ThemTaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text, txtHoTen.Text, txtDiaChi.Text, int.Parse(cboChucVu.SelectedValue.ToString()), pictureBox1);
-            }
-            else
-                MessageBox.Show("Tài khoản đã tồn tại");
+          
         }
 
         private void txtNhapLaiMK_TextChanged(object sender, EventArgs e)
@@ -199,6 +194,21 @@ namespace GUI
             lbmatkhau.ForeColor = Color.White;
             txtMatKhau.ForeColor = Color.White;
             pnmatkhau.BackColor = Color.White;
+
+        }
+
+        private void btnLuu_Click_1(object sender, EventArgs e)
+        {
+            if (taikhoan.kiemTrakhoachinh(txtTaiKhoan.Text.Trim()))
+            {
+                taikhoan.ThemTaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text, txtHoTen.Text, txtDiaChi.Text, int.Parse(cboChucVu.SelectedValue.ToString()), pictureBox1);
+            }
+            else
+                MessageBox.Show("Tài khoản đã tồn tại");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }

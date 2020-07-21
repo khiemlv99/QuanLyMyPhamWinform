@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.btnPhanQuyen = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnBanHang = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.btnPhanQuyen);
             this.panelSideMenu.Controls.Add(this.btnExit);
             this.panelSideMenu.Controls.Add(this.btnThongKe);
             this.panelSideMenu.Controls.Add(this.btnBanHang);
@@ -75,6 +77,28 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 722);
             this.panelSideMenu.TabIndex = 0;
+            // 
+            // btnPhanQuyen
+            // 
+            this.btnPhanQuyen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPhanQuyen.FlatAppearance.BorderSize = 0;
+            this.btnPhanQuyen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnPhanQuyen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnPhanQuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhanQuyen.ForeColor = System.Drawing.Color.Silver;
+            this.btnPhanQuyen.Image = ((System.Drawing.Image)(resources.GetObject("btnPhanQuyen.Image")));
+            this.btnPhanQuyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhanQuyen.Location = new System.Drawing.Point(0, 532);
+            this.btnPhanQuyen.Name = "btnPhanQuyen";
+            this.btnPhanQuyen.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnPhanQuyen.Size = new System.Drawing.Size(250, 45);
+            this.btnPhanQuyen.TabIndex = 10;
+            this.btnPhanQuyen.Tag = "11";
+            this.btnPhanQuyen.Text = "Phân quyền";
+            this.btnPhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhanQuyen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPhanQuyen.UseVisualStyleBackColor = true;
+            this.btnPhanQuyen.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnExit
             // 
@@ -112,6 +136,7 @@
             this.btnThongKe.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnThongKe.Size = new System.Drawing.Size(250, 45);
             this.btnThongKe.TabIndex = 6;
+            this.btnThongKe.Tag = "10";
             this.btnThongKe.Text = "  Thống kê";
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -132,6 +157,7 @@
             this.btnBanHang.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnBanHang.Size = new System.Drawing.Size(250, 45);
             this.btnBanHang.TabIndex = 5;
+            this.btnBanHang.Tag = "9";
             this.btnBanHang.Text = "Bán Hàng";
             this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBanHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -163,6 +189,7 @@
             this.btnKiemKho.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnKiemKho.Size = new System.Drawing.Size(250, 40);
             this.btnKiemKho.TabIndex = 2;
+            this.btnKiemKho.Tag = "8";
             this.btnKiemKho.Text = "Kiểm Kho";
             this.btnKiemKho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKiemKho.UseVisualStyleBackColor = true;
@@ -181,6 +208,7 @@
             this.btnThietlapGia.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnThietlapGia.Size = new System.Drawing.Size(250, 40);
             this.btnThietlapGia.TabIndex = 1;
+            this.btnThietlapGia.Tag = "7";
             this.btnThietlapGia.Text = "Thiết Lập Giá";
             this.btnThietlapGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThietlapGia.UseVisualStyleBackColor = true;
@@ -199,6 +227,7 @@
             this.btnDanhMuc.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnDanhMuc.Size = new System.Drawing.Size(250, 40);
             this.btnDanhMuc.TabIndex = 0;
+            this.btnDanhMuc.Tag = "6";
             this.btnDanhMuc.Text = "Danh Mục";
             this.btnDanhMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhMuc.UseVisualStyleBackColor = true;
@@ -219,6 +248,7 @@
             this.btnHangHoa.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnHangHoa.Size = new System.Drawing.Size(250, 45);
             this.btnHangHoa.TabIndex = 3;
+            this.btnHangHoa.Tag = "5";
             this.btnHangHoa.Text = "  Hàng Hóa";
             this.btnHangHoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHangHoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -250,6 +280,7 @@
             this.btnCapNhatTaiKhoan.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnCapNhatTaiKhoan.Size = new System.Drawing.Size(250, 40);
             this.btnCapNhatTaiKhoan.TabIndex = 2;
+            this.btnCapNhatTaiKhoan.Tag = "4";
             this.btnCapNhatTaiKhoan.Text = "Cập Nhật Tài khoản";
             this.btnCapNhatTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCapNhatTaiKhoan.UseVisualStyleBackColor = true;
@@ -268,6 +299,7 @@
             this.btnThemTaiKhoan.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnThemTaiKhoan.Size = new System.Drawing.Size(250, 40);
             this.btnThemTaiKhoan.TabIndex = 1;
+            this.btnThemTaiKhoan.Tag = "3";
             this.btnThemTaiKhoan.Text = "Thêm Tài Khoản";
             this.btnThemTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemTaiKhoan.UseVisualStyleBackColor = true;
@@ -286,6 +318,7 @@
             this.BtnThongTinTaiKhoan.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.BtnThongTinTaiKhoan.Size = new System.Drawing.Size(250, 40);
             this.BtnThongTinTaiKhoan.TabIndex = 0;
+            this.BtnThongTinTaiKhoan.Tag = "2";
             this.BtnThongTinTaiKhoan.Text = "Thông Tin Tài Khoản";
             this.BtnThongTinTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnThongTinTaiKhoan.UseVisualStyleBackColor = true;
@@ -306,6 +339,7 @@
             this.btnNhanVien.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnNhanVien.Size = new System.Drawing.Size(250, 45);
             this.btnNhanVien.TabIndex = 1;
+            this.btnNhanVien.Tag = "1";
             this.btnNhanVien.Text = "  Nhân Viên";
             this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -369,7 +403,7 @@
             // 
             // frmTrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1198, 722);
@@ -417,6 +451,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnPhanQuyen;
     }
 }
 

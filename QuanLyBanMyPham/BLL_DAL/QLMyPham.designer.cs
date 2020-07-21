@@ -51,12 +51,18 @@ namespace BLL_DAL
     partial void InsertLoaiKH(LoaiKH instance);
     partial void UpdateLoaiKH(LoaiKH instance);
     partial void DeleteLoaiKH(LoaiKH instance);
+    partial void InsertManHinh(ManHinh instance);
+    partial void UpdateManHinh(ManHinh instance);
+    partial void DeleteManHinh(ManHinh instance);
     partial void InsertNhomNV(NhomNV instance);
     partial void UpdateNhomNV(NhomNV instance);
     partial void DeleteNhomNV(NhomNV instance);
     partial void InsertNhomSP(NhomSP instance);
     partial void UpdateNhomSP(NhomSP instance);
     partial void DeleteNhomSP(NhomSP instance);
+    partial void InsertPhanQuyen(PhanQuyen instance);
+    partial void UpdatePhanQuyen(PhanQuyen instance);
+    partial void DeletePhanQuyen(PhanQuyen instance);
     partial void InsertPhieuNhap(PhieuNhap instance);
     partial void UpdatePhieuNhap(PhieuNhap instance);
     partial void DeletePhieuNhap(PhieuNhap instance);
@@ -151,6 +157,14 @@ namespace BLL_DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<ManHinh> ManHinhs
+		{
+			get
+			{
+				return this.GetTable<ManHinh>();
+			}
+		}
+		
 		public System.Data.Linq.Table<NhomNV> NhomNVs
 		{
 			get
@@ -164,6 +178,14 @@ namespace BLL_DAL
 			get
 			{
 				return this.GetTable<NhomSP>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PhanQuyen> PhanQuyens
+		{
+			get
+			{
+				return this.GetTable<PhanQuyen>();
 			}
 		}
 		
@@ -440,6 +462,8 @@ namespace BLL_DAL
 		
 		private System.Nullable<int> _MaNhomNV;
 		
+		private System.Data.Linq.Binary _HinhAnh;
+		
 		private EntitySet<HoaDon> _HoaDons;
 		
 		private EntityRef<NhomNV> _NhomNV;
@@ -458,6 +482,8 @@ namespace BLL_DAL
     partial void OnDiaChiChanged();
     partial void OnMaNhomNVChanging(System.Nullable<int> value);
     partial void OnMaNhomNVChanged();
+    partial void OnHinhAnhChanging(System.Data.Linq.Binary value);
+    partial void OnHinhAnhChanged();
     #endregion
 		
 		public TaiKhoan()
@@ -567,6 +593,26 @@ namespace BLL_DAL
 					this._MaNhomNV = value;
 					this.SendPropertyChanged("MaNhomNV");
 					this.OnMaNhomNVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary HinhAnh
+		{
+			get
+			{
+				return this._HinhAnh;
+			}
+			set
+			{
+				if ((this._HinhAnh != value))
+				{
+					this.OnHinhAnhChanging(value);
+					this.SendPropertyChanging();
+					this._HinhAnh = value;
+					this.SendPropertyChanged("HinhAnh");
+					this.OnHinhAnhChanged();
 				}
 			}
 		}
@@ -1764,6 +1810,120 @@ namespace BLL_DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ManHinh")]
+	public partial class ManHinh : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaManHinh;
+		
+		private string _TenManHinh;
+		
+		private EntitySet<PhanQuyen> _PhanQuyens;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaManHinhChanging(int value);
+    partial void OnMaManHinhChanged();
+    partial void OnTenManHinhChanging(string value);
+    partial void OnTenManHinhChanged();
+    #endregion
+		
+		public ManHinh()
+		{
+			this._PhanQuyens = new EntitySet<PhanQuyen>(new Action<PhanQuyen>(this.attach_PhanQuyens), new Action<PhanQuyen>(this.detach_PhanQuyens));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaManHinh", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaManHinh
+		{
+			get
+			{
+				return this._MaManHinh;
+			}
+			set
+			{
+				if ((this._MaManHinh != value))
+				{
+					this.OnMaManHinhChanging(value);
+					this.SendPropertyChanging();
+					this._MaManHinh = value;
+					this.SendPropertyChanged("MaManHinh");
+					this.OnMaManHinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenManHinh", DbType="NVarChar(50)")]
+		public string TenManHinh
+		{
+			get
+			{
+				return this._TenManHinh;
+			}
+			set
+			{
+				if ((this._TenManHinh != value))
+				{
+					this.OnTenManHinhChanging(value);
+					this.SendPropertyChanging();
+					this._TenManHinh = value;
+					this.SendPropertyChanged("TenManHinh");
+					this.OnTenManHinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ManHinh_PhanQuyen", Storage="_PhanQuyens", ThisKey="MaManHinh", OtherKey="MaManHinh")]
+		public EntitySet<PhanQuyen> PhanQuyens
+		{
+			get
+			{
+				return this._PhanQuyens;
+			}
+			set
+			{
+				this._PhanQuyens.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_PhanQuyens(PhanQuyen entity)
+		{
+			this.SendPropertyChanging();
+			entity.ManHinh = this;
+		}
+		
+		private void detach_PhanQuyens(PhanQuyen entity)
+		{
+			this.SendPropertyChanging();
+			entity.ManHinh = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhomNV")]
 	public partial class NhomNV : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1775,6 +1935,8 @@ namespace BLL_DAL
 		private string _TenNhomNV;
 		
 		private EntitySet<TaiKhoan> _TaiKhoans;
+		
+		private EntitySet<PhanQuyen> _PhanQuyens;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1789,6 +1951,7 @@ namespace BLL_DAL
 		public NhomNV()
 		{
 			this._TaiKhoans = new EntitySet<TaiKhoan>(new Action<TaiKhoan>(this.attach_TaiKhoans), new Action<TaiKhoan>(this.detach_TaiKhoans));
+			this._PhanQuyens = new EntitySet<PhanQuyen>(new Action<PhanQuyen>(this.attach_PhanQuyens), new Action<PhanQuyen>(this.detach_PhanQuyens));
 			OnCreated();
 		}
 		
@@ -1845,6 +2008,19 @@ namespace BLL_DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhomNV_PhanQuyen", Storage="_PhanQuyens", ThisKey="MaNhomNV", OtherKey="MaNhomNV")]
+		public EntitySet<PhanQuyen> PhanQuyens
+		{
+			get
+			{
+				return this._PhanQuyens;
+			}
+			set
+			{
+				this._PhanQuyens.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1872,6 +2048,18 @@ namespace BLL_DAL
 		}
 		
 		private void detach_TaiKhoans(TaiKhoan entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhomNV = null;
+		}
+		
+		private void attach_PhanQuyens(PhanQuyen entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhomNV = this;
+		}
+		
+		private void detach_PhanQuyens(PhanQuyen entity)
 		{
 			this.SendPropertyChanging();
 			entity.NhomNV = null;
@@ -1989,6 +2177,198 @@ namespace BLL_DAL
 		{
 			this.SendPropertyChanging();
 			entity.NhomSP = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PhanQuyen")]
+	public partial class PhanQuyen : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaNhomNV;
+		
+		private int _MaManHinh;
+		
+		private System.Nullable<bool> _CoQuyen;
+		
+		private EntityRef<ManHinh> _ManHinh;
+		
+		private EntityRef<NhomNV> _NhomNV;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaNhomNVChanging(int value);
+    partial void OnMaNhomNVChanged();
+    partial void OnMaManHinhChanging(int value);
+    partial void OnMaManHinhChanged();
+    partial void OnCoQuyenChanging(System.Nullable<bool> value);
+    partial void OnCoQuyenChanged();
+    #endregion
+		
+		public PhanQuyen()
+		{
+			this._ManHinh = default(EntityRef<ManHinh>);
+			this._NhomNV = default(EntityRef<NhomNV>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhomNV", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaNhomNV
+		{
+			get
+			{
+				return this._MaNhomNV;
+			}
+			set
+			{
+				if ((this._MaNhomNV != value))
+				{
+					if (this._NhomNV.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaNhomNVChanging(value);
+					this.SendPropertyChanging();
+					this._MaNhomNV = value;
+					this.SendPropertyChanged("MaNhomNV");
+					this.OnMaNhomNVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaManHinh", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaManHinh
+		{
+			get
+			{
+				return this._MaManHinh;
+			}
+			set
+			{
+				if ((this._MaManHinh != value))
+				{
+					if (this._ManHinh.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaManHinhChanging(value);
+					this.SendPropertyChanging();
+					this._MaManHinh = value;
+					this.SendPropertyChanged("MaManHinh");
+					this.OnMaManHinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CoQuyen", DbType="Bit")]
+		public System.Nullable<bool> CoQuyen
+		{
+			get
+			{
+				return this._CoQuyen;
+			}
+			set
+			{
+				if ((this._CoQuyen != value))
+				{
+					this.OnCoQuyenChanging(value);
+					this.SendPropertyChanging();
+					this._CoQuyen = value;
+					this.SendPropertyChanged("CoQuyen");
+					this.OnCoQuyenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ManHinh_PhanQuyen", Storage="_ManHinh", ThisKey="MaManHinh", OtherKey="MaManHinh", IsForeignKey=true)]
+		public ManHinh ManHinh
+		{
+			get
+			{
+				return this._ManHinh.Entity;
+			}
+			set
+			{
+				ManHinh previousValue = this._ManHinh.Entity;
+				if (((previousValue != value) 
+							|| (this._ManHinh.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ManHinh.Entity = null;
+						previousValue.PhanQuyens.Remove(this);
+					}
+					this._ManHinh.Entity = value;
+					if ((value != null))
+					{
+						value.PhanQuyens.Add(this);
+						this._MaManHinh = value.MaManHinh;
+					}
+					else
+					{
+						this._MaManHinh = default(int);
+					}
+					this.SendPropertyChanged("ManHinh");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhomNV_PhanQuyen", Storage="_NhomNV", ThisKey="MaNhomNV", OtherKey="MaNhomNV", IsForeignKey=true)]
+		public NhomNV NhomNV
+		{
+			get
+			{
+				return this._NhomNV.Entity;
+			}
+			set
+			{
+				NhomNV previousValue = this._NhomNV.Entity;
+				if (((previousValue != value) 
+							|| (this._NhomNV.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NhomNV.Entity = null;
+						previousValue.PhanQuyens.Remove(this);
+					}
+					this._NhomNV.Entity = value;
+					if ((value != null))
+					{
+						value.PhanQuyens.Add(this);
+						this._MaNhomNV = value.MaNhomNV;
+					}
+					else
+					{
+						this._MaNhomNV = default(int);
+					}
+					this.SendPropertyChanged("NhomNV");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

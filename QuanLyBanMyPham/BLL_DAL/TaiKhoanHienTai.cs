@@ -10,7 +10,13 @@ namespace BLL_DAL
     public class TaiKhoanHienTai
     {
         public static string TaiKhoan, DiaChi, HoTen;
+        private static int maNhomNV;
 
+        public static int MaNhomNV
+        {
+            get { return TaiKhoanHienTai.maNhomNV; }
+            set { TaiKhoanHienTai.maNhomNV = value; }
+        }
         public static string HoTen1
         {
             get { return TaiKhoanHienTai.HoTen; }

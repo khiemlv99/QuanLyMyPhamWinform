@@ -13,10 +13,11 @@ namespace GUI
     public partial class frmTrangChu : Form
     {
         CapNhatTaiKhoan_BLL_DAL tk = new CapNhatTaiKhoan_BLL_DAL();
+        PhanQuyen_BLL_DAL pq= new PhanQuyen_BLL_DAL();
         public frmTrangChu()
         {
             InitializeComponent();
-            
+            phanQuyen();    
             hideSubMenu();
            
         }
@@ -47,7 +48,7 @@ namespace GUI
         #region MediaSubMenu
         private void button2_Click(object sender, EventArgs e)
         {
-            tk.loadDuLieuTaiKhoanHienTai("QL003");
+           
             openChildForm(new frmThongTinTaiKhoan());      
             hideSubMenu();
         }
@@ -167,6 +168,31 @@ namespace GUI
             childForm.Show();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new frmPhanQuyen());
+            hideSubMenu();
+        }
+
+
+        private void phanQuyen()
+        {
+            List<Button> btn = new List<Button>(); btn.Add(btnBanHang); btn.Add(BtnThongTinTaiKhoan); btn.Add(btnThemTaiKhoan); btn.Add(btnCapNhatTaiKhoan); btn.Add(btnHangHoa); btn.Add(btnDanhMuc); btn.Add(btnThietlapGia); btn.Add(btnKiemKho); btn.Add(btnThongKe); btn.Add(btnPhanQuyen);
+
+            foreach (Button bn in btn)
+            {
+                if (pq.kiemtraphanquyenmanhinh(int.Parse(bn.Tag.ToString()), TaiKhoanHienTai.MaNhomNV))
+                {
+                    bn.Visible = true;
+                    bn.Enabled = true;
+                }
+                else
+                {
+                    bn.Visible = false;
+                    bn.Enabled = false      ;
+                }
+            }
+        }
 
     }
 }

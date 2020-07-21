@@ -16,7 +16,7 @@ namespace GUI
         public frmCapNhatTaiKhoan()
         {
             InitializeComponent();
-            loadDataGridView();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,7 +31,8 @@ namespace GUI
 
         private void frmCapNhatTaiKhoan_Load(object sender, EventArgs e)
         {
-
+            loadDataGridView();
+            
         }
     }
 }
