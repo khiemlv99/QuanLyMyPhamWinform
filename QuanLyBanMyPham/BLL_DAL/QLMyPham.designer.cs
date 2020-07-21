@@ -66,7 +66,7 @@ namespace BLL_DAL
     #endregion
 		
 		public QLMyPhamDataContext() : 
-				base(global::BLL_DAL.Properties.Settings.Default.QuanLyShopMyPhamConnectionString1, mappingSource)
+				base(global::BLL_DAL.Properties.Settings.Default.QuanLyShopMyPhamConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -440,8 +440,6 @@ namespace BLL_DAL
 		
 		private System.Nullable<int> _MaNhomNV;
 		
-		private System.Data.Linq.Binary _HinhAnh;
-		
 		private EntitySet<HoaDon> _HoaDons;
 		
 		private EntityRef<NhomNV> _NhomNV;
@@ -460,8 +458,6 @@ namespace BLL_DAL
     partial void OnDiaChiChanged();
     partial void OnMaNhomNVChanging(System.Nullable<int> value);
     partial void OnMaNhomNVChanged();
-    partial void OnHinhAnhChanging(System.Data.Linq.Binary value);
-    partial void OnHinhAnhChanged();
     #endregion
 		
 		public TaiKhoan()
@@ -571,26 +567,6 @@ namespace BLL_DAL
 					this._MaNhomNV = value;
 					this.SendPropertyChanged("MaNhomNV");
 					this.OnMaNhomNVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary HinhAnh
-		{
-			get
-			{
-				return this._HinhAnh;
-			}
-			set
-			{
-				if ((this._HinhAnh != value))
-				{
-					this.OnHinhAnhChanging(value);
-					this.SendPropertyChanging();
-					this._HinhAnh = value;
-					this.SendPropertyChanged("HinhAnh");
-					this.OnHinhAnhChanged();
 				}
 			}
 		}

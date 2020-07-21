@@ -58,7 +58,7 @@ namespace BLL_DAL
             tk.HoTenNV=Hoten;
             tk.DiaChi=DiaChi;
             tk.MaNhomNV=MaNhom;
-            tk.HinhAnh = stream.ToArray();
+          //  tk.HinhAnh = stream.ToArray();
 
             qlmp.TaiKhoans.InsertOnSubmit(tk);
             qlmp.SubmitChanges();
@@ -77,7 +77,7 @@ namespace BLL_DAL
            TaiKhoan SV = qlmp.TaiKhoans.Where(t => t.TaiKhoan1 == taikhoan).Select(t1=>t1).FirstOrDefault();
             TaiKhoanHienTai.TaiKhoan1 = SV.TaiKhoan1;
             TaiKhoanHienTai.DiaChi1 = SV.DiaChi;
-            TaiKhoanHienTai.HinhAnh1 = SV.HinhAnh;
+            //TaiKhoanHienTai.HinhAnh1 = SV.HinhAnh;
             TaiKhoanHienTai.HoTen1 = SV.HoTenNV;
 
         }
